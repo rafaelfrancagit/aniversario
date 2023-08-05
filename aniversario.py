@@ -10,19 +10,19 @@ def checagem_int(data):
 dia_nascimento = (input("Qual o dia do seu nascimento? "))
 
 while len(dia_nascimento) != 2 or not checagem_int(dia_nascimento):
-     print("O dia do nascimento pode conter apenas 2 numerais, tente novamente.")
+     print("O dia do nascimento precisa conter exatamente 2 numerais, tente novamente.")
      dia_nascimento = (input("Qual o dia do seu nascimento? "))
 
 mes_nascimento = (input("Qual o mês do seu nascimento? "))
 
 while len(mes_nascimento) != 2 or not checagem_int(mes_nascimento):
-     print("O mês de nascimento pode conter apenas 2 numerais, tente novamente.")
+     print("O mês de nascimento precisa conter exatamente 2 numerais, tente novamente.")
      mes_nascimento = (input("Qual o mês do seu nascimento? "))
 
 ano_nascimento = (input("Qual o ano do seu nascimento? "))
 
 while len(ano_nascimento) != 4 or not checagem_int(ano_nascimento):
-     print("O ano do nascimento pode conter apenas 4 numerais, tente novamente.")
+     print("O ano do nascimento precisa conter exatamente 4 numerais, tente novamente.")
      ano_nascimento = (input("Qual o ano do seu nascimento? "))
 
 dia_nascimento = int(dia_nascimento)
@@ -47,11 +47,12 @@ else:
     faltam_dias = datetime(year=int(datetime.now().strftime("%Y")), month=nascimento.month, day=nascimento.day)
     faltam_dias = faltam_dias - datetime.now()
 
-if mes_nascimento > datetime.now().month:
+if not fezniver():
     idade_user -= 1
-elif mes_nascimento == datetime.now().month and dia_nascimento > datetime.now().day:
-        idade_user -= 1
 
-print(f"Você tem {idade_user} anos e faltam {faltam_dias.days} dias para seu aniversário!")
+if faltam_dias.days == 0:
+    print(f"Você tem {idade_user} anos e falta {faltam_dias.days + 1} dia para seu aniversário!")
+else:
+    print(f"Você tem {idade_user} anos e faltam {faltam_dias.days + 1} dias para seu aniversário!")
 print(f"Sua data de nascimento é: {nascimento.strftime('%d/%m/%Y')}")
 print(f"A data de hoje é: {datetime.now().strftime('%d/%m/%Y')}")
