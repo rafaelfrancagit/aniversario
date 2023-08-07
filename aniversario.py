@@ -1,27 +1,20 @@
 from datetime import datetime
 
-def checagem_int(data):
-    try:
-        data = int(data)
-        return True
-    except ValueError:
-        return False
-
 dia_nascimento = (input("Qual o dia do seu nascimento? "))
 
-while len(dia_nascimento) != 2 or not checagem_int(dia_nascimento):
-     print("O dia do nascimento precisa conter exatamente 2 numerais, tente novamente.")
+while len(dia_nascimento) > 2 or not dia_nascimento.isdigit():
+     print("O dia do nascimento precisa conter no máximo 2 numerais, tente novamente.")
      dia_nascimento = (input("Qual o dia do seu nascimento? "))
 
 mes_nascimento = (input("Qual o mês do seu nascimento? "))
 
-while len(mes_nascimento) != 2 or not checagem_int(mes_nascimento):
-     print("O mês de nascimento precisa conter exatamente 2 numerais, tente novamente.")
+while len(mes_nascimento) > 2 or not mes_nascimento.isdigit():
+     print("O mês de nascimento precisa conter no máximo 2 numerais, tente novamente.")
      mes_nascimento = (input("Qual o mês do seu nascimento? "))
 
 ano_nascimento = (input("Qual o ano do seu nascimento? "))
 
-while len(ano_nascimento) != 4 or not checagem_int(ano_nascimento):
+while len(ano_nascimento) != 4 or not ano_nascimento.isdigit():
      print("O ano do nascimento precisa conter exatamente 4 numerais, tente novamente.")
      ano_nascimento = (input("Qual o ano do seu nascimento? "))
 
