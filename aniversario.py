@@ -2,20 +2,20 @@ from datetime import datetime
 
 dia_nascimento = (input("Qual o dia do seu nascimento? "))
 
-while len(dia_nascimento) > 2 or not dia_nascimento.isdigit():
-     print("O dia do nascimento precisa conter no máximo 2 numerais, tente novamente.")
+while len(dia_nascimento) > 2 or not dia_nascimento.isdigit() or int(dia_nascimento) > 31 or int(dia_nascimento) <= 0:
+     print("O dia do nascimento não contém no máximo 2 numerais ou a data está incorreta, tente novamente.")
      dia_nascimento = (input("Qual o dia do seu nascimento? "))
 
 mes_nascimento = (input("Qual o mês do seu nascimento? "))
 
-while len(mes_nascimento) > 2 or not mes_nascimento.isdigit():
-     print("O mês de nascimento precisa conter no máximo 2 numerais, tente novamente.")
+while len(mes_nascimento) > 2 or not mes_nascimento.isdigit or int(mes_nascimento) > 12 or int(mes_nascimento) <= 0:
+     print("O mês de nascimento não contém no máximo 2 numerais ou a data está incorreta, tente novamente.")
      mes_nascimento = (input("Qual o mês do seu nascimento? "))
 
 ano_nascimento = (input("Qual o ano do seu nascimento? "))
 
 while len(ano_nascimento) != 4 or not ano_nascimento.isdigit():
-     print("O ano do nascimento precisa conter exatamente 4 numerais, tente novamente.")
+     print("O ano do nascimento precisa conter exatamente 4 numerais, a data está incorreta tente novamente.")
      ano_nascimento = (input("Qual o ano do seu nascimento? "))
 
 dia_nascimento = int(dia_nascimento)
